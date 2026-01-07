@@ -34,6 +34,12 @@ function Posts() {
             alert("Post Added Successfully");
         })
     }
+
+    const deletePost = (postDel) => {
+        setPosts(posts.filter(p => p !== postDel));
+        alert("Post Deleted Successfully");
+    }
+
   return (
     <div>
         <h3>Post List</h3>
@@ -49,6 +55,9 @@ function Posts() {
                     <td>{posts.id}</td>
                     <td>{posts.title}</td>
                     <td>{posts.body}</td>
+                    <td>
+                        <button className='btn btn-danger' onClick={() => deletePost(posts)}>Delete</button>
+                    </td>
                 </tr>
                 ))}
             </tbody>
